@@ -20,6 +20,14 @@ Set "To email" to the administrator's address. Use `{{subject}}` as the subject 
 - **Drag and drop:** run `npm run build` locally (uses your `.env`), then drag `dist/` onto app.netlify.com/drop.
 - `public/_redirects` makes deep links like `/pets` work on refresh.
 
+## Tests
+```bash
+npm test          # run once
+npm run test:watch
+```
+Integration tests (Vitest + React Testing Library) cover browsing/filters, favourites,
+protected routes, login and the forms. The email service is mocked, so no emails are sent.
+
 ## Notes
 - Pet photos: replace `/images/placeholder.svg` in `src/data/pets.json` with your own files in `public/images/`.
 - Membership is simulated with `localStorage` (assumption: no real authentication).

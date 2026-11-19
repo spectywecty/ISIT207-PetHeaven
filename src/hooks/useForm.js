@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useToast } from "../context/ToastContext";
 
-export default function useForm(initialValues, validate, onSubmit) {
+// messages (optional): { success: "...", error: "..." } shown as toasts
+export default function useForm(initialValues, validate, onSubmit, messages = {}) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const { showToast } = useToast();
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target;
@@ -29,9 +32,11 @@ export default function useForm(initialValues, validate, onSubmit) {
       setStatus("success");
       setValues(initialValues);
       setTouched({});
+      if (messages.success) showToast(messages.success, "success");
     } catch (err) {
       console.error(err);
       setStatus("error");
+      if (messages.error) showToast(messages.error, "error");
     }
   };
 

@@ -1,3 +1,4 @@
+import usePageTitle from "../hooks/usePageTitle";
 import { useParams, Link } from "react-router-dom";
 import pets from "../data/pets.json";
 import { useAuth } from "../context/AuthContext";
@@ -16,6 +17,7 @@ export default function AdoptPet() {
   const { id } = useParams();
   const { member } = useAuth();
   const pet = pets.find(p => p.id === Number(id));
+  usePageTitle(pet ? `Adopt ${pet.name}` : "Pet not found");
 
   const initial = {
     petId: pet?.id ?? "",
@@ -34,7 +36,8 @@ export default function AdoptPet() {
       subject: `Adoption request for ${values.petName} (#${values.petId})`,
       replyTo: values.memberEmail,
       values,
-    })
+    }),
+    { success: "Adoption request sent.", error: "Could not send your request." }
   );
 
   if (!pet) return <p>Pet not found. <Link to="/pets">Back to all pets</Link></p>;

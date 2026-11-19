@@ -104,3 +104,45 @@ form { max-width: 520px; }
 @media (max-width: 600px) {
   .navbar { justify-content: center; }
 }
+
+/* ---- v1.1 additions ---- */
+.pet-card-media { position: relative; }
+.pet-detail .pet-card-media img { width: 100%; max-height: 380px; object-fit: cover; border-radius: var(--radius); display: block; }
+.fav-btn {
+  position: absolute; top: .6rem; right: .6rem; width: 2.25rem; height: 2.25rem;
+  border-radius: 50%; border: none; background: rgba(255,255,255,.92); color: var(--primary);
+  font-size: 1.25rem; line-height: 1; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+.fav-btn:hover { background: #fff; }
+.fav-btn.active { color: var(--danger); }
+.fav-btn:focus-visible, .menu-toggle:focus-visible, .link-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 1rem 0; }
+.pet-detail .badges { margin: .5rem 0 1rem; }
+.badges span {
+  font-size: .8rem; padding: .1rem .6rem; border-radius: 999px;
+  background: #fdeee4; color: var(--primary-dark); text-transform: capitalize;
+}
+
+.filter-bar select { flex: 0 1 auto; }
+.filter-bar .check { display: flex; align-items: center; gap: .4rem; }
+.filter-bar .check input { flex: none; padding: 0; }
+.link-btn { background: none; border: none; color: var(--primary); text-decoration: underline; cursor: pointer; font: inherit; }
+
+.toast-region { position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%); z-index: 50; width: max-content; max-width: 90vw; }
+.toast { padding: .75rem 1.25rem; border-radius: 999px; color: #fff; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+.toast-success { background: var(--success); }
+.toast-error { background: var(--danger); }
+
+.menu-toggle { display: none; }
+@media (max-width: 700px) {
+  .navbar { justify-content: space-between; }
+  .navbar .menu-toggle { display: block; font-size: 1.25rem; }
+  .navbar nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: .75rem; padding-top: .5rem; }
+  .navbar nav.open { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-card { transition: none; }
+  .pet-card:hover { transform: none; }
+}

@@ -1,6 +1,8 @@
+import usePageTitle from "../hooks/usePageTitle";
 import Button from "../components/Button";
 
 export default function NotFound() {
+  usePageTitle("Page not found");
   return (
     <div className="center">
       <h1>404: page not found</h1>

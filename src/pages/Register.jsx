@@ -1,3 +1,4 @@
+import usePageTitle from "../hooks/usePageTitle";
 import useForm from "../hooks/useForm";
 import FormField from "../components/FormField";
 import { check, compact, required, email, phone } from "../utils/validators";
@@ -13,6 +14,7 @@ const validate = v => compact({
 });
 
 export default function Register() {
+  usePageTitle("Join us");
   const { register } = useAuth();
 
   const { status, handleSubmit, field } = useForm(initial, validate, async values => {
@@ -23,7 +25,7 @@ export default function Register() {
       values,
     });
     register(values); // only runs if the email succeeded
-  });
+  }, { success: "Welcome to Pet Heaven!", error: "Could not send your registration." });
 
   return (
     <>

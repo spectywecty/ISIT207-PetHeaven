@@ -1,3 +1,4 @@
+import usePageTitle from "../hooks/usePageTitle";
 import pets from "../data/pets.json";
 import PetList from "../components/PetList";
 import Button from "../components/Button";
@@ -10,6 +11,7 @@ const facilities = [
 ];
 
 export default function Home() {
+  usePageTitle("Home");
   return (
     <>
       <section className="hero">

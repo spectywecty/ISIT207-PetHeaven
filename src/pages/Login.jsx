@@ -1,3 +1,4 @@
+import usePageTitle from "../hooks/usePageTitle";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import FormField from "../components/FormField";
@@ -9,6 +10,7 @@ const validate = v => compact({
 });
 
 export default function Login() {
+  usePageTitle("Log in");
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();

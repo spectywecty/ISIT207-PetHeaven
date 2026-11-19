@@ -1,8 +1,8 @@
 [
-  { "id": 1, "name": "Mochi", "species": "cat", "age": 2, "breed": "Domestic Shorthair", "description": "Gentle and loves window naps.", "image": "/images/placeholder.svg" },
-  { "id": 2, "name": "Rocky", "species": "dog", "age": 4, "breed": "Mixed", "description": "Energetic and great with kids.", "image": "/images/placeholder.svg" },
-  { "id": 3, "name": "Luna", "species": "cat", "age": 1, "breed": "Siamese Mix", "description": "Playful kitten who chases anything that moves.", "image": "/images/placeholder.svg" },
-  { "id": 4, "name": "Buddy", "species": "dog", "age": 6, "breed": "Singapore Special", "description": "Calm, loyal and happy on slow walks.", "image": "/images/placeholder.svg" },
-  { "id": 5, "name": "Whiskers", "species": "cat", "age": 5, "breed": "Persian Mix", "description": "A quiet lap cat who enjoys being brushed.", "image": "/images/placeholder.svg" },
-  { "id": 6, "name": "Daisy", "species": "dog", "age": 3, "breed": "Beagle Mix", "description": "Curious and food-motivated, easy to train.", "image": "/images/placeholder.svg" }
+  { "id": 1, "name": "Mochi", "species": "cat", "age": 2, "breed": "Domestic Shorthair", "gender": "female", "size": "small", "sterilised": true, "vaccinated": true, "description": "Gentle and loves window naps.", "image": "/images/placeholder.svg" },
+  { "id": 2, "name": "Rocky", "species": "dog", "age": 4, "breed": "Mixed", "gender": "male", "size": "large", "sterilised": true, "vaccinated": true, "description": "Energetic and great with kids.", "image": "/images/placeholder.svg" },
+  { "id": 3, "name": "Luna", "species": "cat", "age": 1, "breed": "Siamese Mix", "gender": "female", "size": "small", "sterilised": false, "vaccinated": true, "description": "Playful kitten who chases anything that moves.", "image": "/images/placeholder.svg" },
+  { "id": 4, "name": "Buddy", "species": "dog", "age": 6, "breed": "Singapore Special", "gender": "male", "size": "medium", "sterilised": true, "vaccinated": true, "description": "Calm, loyal and happy on slow walks.", "image": "/images/placeholder.svg" },
+  { "id": 5, "name": "Whiskers", "species": "cat", "age": 5, "breed": "Persian Mix", "gender": "male", "size": "medium", "sterilised": true, "vaccinated": false, "description": "A quiet lap cat who enjoys being brushed.", "image": "/images/placeholder.svg" },
+  { "id": 6, "name": "Daisy", "species": "dog", "age": 3, "breed": "Beagle Mix", "gender": "female", "size": "medium", "sterilised": true, "vaccinated": true, "description": "Curious and food-motivated, easy to train.", "image": "/images/placeholder.svg" }
 ]

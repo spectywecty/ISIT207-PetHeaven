@@ -1,3 +1,4 @@
+import usePageTitle from "../hooks/usePageTitle";
 import useForm from "../hooks/useForm";
 import FormField from "../components/FormField";
 import { check, compact, required, email, phone, minLength } from "../utils/validators";
@@ -18,13 +19,15 @@ const validate = v => compact({
 });
 
 export default function ReleasePet() {
+  usePageTitle("Release a pet");
   const { status, handleSubmit, field } = useForm(initial, validate, values =>
     sendToAdmin({
       formType: "Pet release request",
       subject: `Release request: ${values.petName} (${values.species})`,
       replyTo: values.email,
       values,
-    })
+    }),
+    { success: "Release request sent.", error: "Could not send your request." }
   );
 
   return (
